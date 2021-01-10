@@ -57,20 +57,24 @@
   </div>
 </div>
 
+<!-- Input form -->
+<div class="container">
+	<div class="row">
+    <div class="col-md-3"></div>
+		<div class="col-md-6 text-center" id="hfooter">
+			<form class="form-inline">
 
-<h2>Add a Cat</h2>
-<form class="create-form">
+        <div class="form-group mx-sm-3">
+          <input type="text" class="form-control" id="burger-name" placeholder="Enter burger name">
+        </div>
 
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+        <button type="submit" class="btn btn-primary" id="add-button">Add burger!</button>
+
+      </form>
+
+			<h4 class="footer-message">Enter the burger you want to devoured! And click on the button: "Add burger!".</h4>
+
+		</div>
+    <div class="col-md-3"></div>
   </div>
-
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Cat</button>
-</form>
+</div>
