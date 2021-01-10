@@ -2,40 +2,75 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center" id="header">
+
 			<img src="/assets/images/burger.png" alt="eat that burger" />
+
 			<h1 class="main-title">Eat-Da-Burger!</h1>
+
 		</div>
   </div>
 </div>
 
-<!-- Pass in data from server.js -->
-<ul>
-  {{#each quotes}}
-  	<li>
-  		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">Quote:</span> {{this.quote}}</p>
-      <p><span class="label">Author:</span> {{this.author}}</p>
+<!-- Cointainer to display the burgers list and status-->
+<div class="container">
+	<div class="row">
 
-      <button data-id="{{this.id}}" class="delquote">Delete</button>
+    <!-- Display the burger list of burgers to eat-->
+		<div class="col-md-7" class="burger-list">
+			<div class="row">
 
-      <a href="/{{this.id}}">Update this quote</a>
-  	</li>
-  {{/each}}
-</ul>
+			  {{#each burger_data}}
+			  	{{#unless this.devoured}}
 
-<h2>Add a Quote</h2>
+            <div class="col-md-8 burger-container">
+              <div>{{this.id}}. {{this.burger_name}}</div>
+            </div>
 
+            <div class="col-md-4 text-center burger-button">
+              <form class="devour-form button-size">
+                <input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
+                <button type="submit" class="btn btn-default">Devour it!</button>
+              </form>
+            </div>
+
+				  {{/unless}}
+			  {{/each}}
+
+			</div>
+		</div>
+
+    <!-- Display the devoured burger list-->
+    <div class="col-md-5" class="devoured-list">
+			<div class="row">
+
+			  {{#each burger_data}}
+			  	{{#if this.devoured}}
+
+			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}">
+
+				  {{/if}}
+			  {{/each}}
+
+			</div>
+		</div>
+
+  </div>
+</div>
+
+
+<h2>Add a Cat</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="auth">Author:</label>
-    <input type="text" id="auth" name="author">
+    <label for="ca">Cat Name:</label>
+    <input type="text" id="ca" name="name">
   </div>
 
   <div class="form-group">
-    <label for="quo">Quote:</label>
-    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+    <label for="sleepy">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0"> Awake
   </div>
 
-  <button type="submit">Add Quote</button>
+  <button type="submit">Add Cat</button>
 </form>
