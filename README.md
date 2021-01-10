@@ -85,7 +85,7 @@ I created a burger logger with MySQL, Node, Express, Handlebars and a homemade O
 
 ## Project status:
 
-* My Heroku live link display a database error
+* Possibility to improve the CSS and visual on the homepage
 
 - - -
 
