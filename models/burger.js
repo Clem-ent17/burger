@@ -2,25 +2,21 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-// Require from orm.js => var orm => All
   all: function(cb) {
     orm.all("burgers", function(res) {
       cb(res);
     });
   },
-  // Require from orm.js => var orm => create
-  create: function(cols, vals, cb) {
-    orm.create("burgers", cols, vals, function(res) {
+  insert: function(cols, vals, cb) {
+    orm.insert("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
-  // Require from orm.js => var orm => update
-  update: function(objColVals, condition, cb) {
-    orm.update("burgers", objColVals, condition, function(res) {
+  update: function(cols, vals, condition, cb) {
+    orm.update("burgers", cols, vals, condition, function(res) {
       cb(res);
     });
   }
 };
 
-// Export the database functions for the controller (burgersController.js).
 module.exports = burger;

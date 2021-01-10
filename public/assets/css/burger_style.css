@@ -1,0 +1,53 @@
+h1 {
+    color: rgb(228, 129, 0);
+    font-size: 3em;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+.devoured-button {
+	background-color:rgb(228, 129, 0);
+	border-radius:20px;
+	border:1px solid rgb(228, 129, 0);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:8px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px rgb(207, 118, 2);
+}
+.devoured-button:hover {
+	background-color:rgb(197, 112, 0);
+}
+.devoured-button:active {
+	position:relative;
+	top:1px;
+}
+
+.add-button {
+    margin-bottom: 12px;
+    margin-top: 12px;
+	background-color:rgb(15, 170, 22);
+	border-radius:30px;
+	border:1px solid rgb(15, 170, 22);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:12px 30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px rgb(15, 155, 22);
+}
+.add-button:hover {
+	background-color:rgb(13, 145, 20);
+}
+.add-button:active {
+	position:relative;
+	top:1px;
+}
