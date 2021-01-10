@@ -18,11 +18,12 @@
 		<div class="col-md-5">
 			<div class="row">
 				<ul class="burger-list">
-					{{#each burger}}
+					{{#each burgers}}
 						{{#unless devoured}}
-						<li>{{this.id}}. {{burger_name}}
-							<button class="devoured-button" data-id="{{id}}" data-devoured="{{devoured}}">Devoured it!</button>
-						</li>
+							<li><p>{{this.id}}. {{burger_name}}
+								<button class="devoured-button" data-id="{{id}}" data-devoured="{{devoured}}">Devoured it!</button>
+								</p>
+							</li>
 						{{/unless}}
 					{{/each}}
 				</ul>
@@ -33,9 +34,9 @@
     <div class="col-md-3 pt-3 pb-3" class="devoured-list">
 		<div class="row">
 			<ul class="devoured-list">
-			  	{{#each burger}}
+			  	{{#each burgers}}
 					{{#if devoured}}
-					<li>{{this.id}}. {{burger_name}}</li>
+						<li>{{this.id}}. {{burger_name}}</li>
 					{{/if}}
 				{{/each}}
 			</ul>
@@ -50,14 +51,14 @@
 	<div class="row">
     	<div class="col-md-3"></div>
 		<div class="col-md-6 text-center" id="hfooter">
-			<form class="create-form pt-3 pb-3">
+			<form class="create-burger">
+				<p class="footer-message">Enter the burger you want to devoured! And click on the button: "Add burger!".</p>
 				<div class="form-group">
-					<label for="name">Burger Name:</label>
-					<input type="text" id="burger_name" name="burger_name">
+					<input type="text" id="burger" name="burger_name">
 				</div>
-				<button class="add-button" type="submit">Add Burger!</button>
+				<button type="submit" class="add-button">Add burger</button>			
 			</form>
-			<p class="footer-message">Enter the burger you want to devoured! And click on the button: "Add burger!".</p>
+			
 		</div>
     	<div class="col-md-3"></div>
   	</div>

@@ -1,22 +1,24 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
+// Create model in the variable burger
 var burger = {
-  all: function(cb) {
-    orm.all("burgers", function(res) {
+  selectAll: function(cb) {
+    orm.selectAll("burgers", function(res) {
       cb(res);
     });
   },
-  insert: function(cols, vals, cb) {
-    orm.insert("burgers", cols, vals, function(res) {
+  insertOne: function(cols, vals, cb) {
+    orm.insertOne("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
-  update: function(cols, vals, condition, cb) {
-    orm.update("burgers", cols, vals, condition, function(res) {
+  updateOne: function(id, cb) {
+    orm.updateOne(id, function(res) {
       cb(res);
     });
   }
 };
 
+// Export the burger model to the burgers_controller.js
 module.exports = burger;

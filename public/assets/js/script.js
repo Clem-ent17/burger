@@ -1,37 +1,37 @@
-$(function() {
-  $(".devoured-button").on("click", function(event) {
-    var id = $(this).data("id");
-    var newDevoured = $(this).data("devoured");
+$(function () {
+  //On click event to update the devoured bollean
+  $(".devoured-button").on("click", function (event) {
+    event.preventDefault()
 
-    var burgerStatus = {
-      devoured: newDevoured
-    };
+    var id = $(this).data("id");
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: burgerStatus
-    });
-    
-    location.reload();
+      type: "PUT"
+    }).then(
+      // Reload the page to get the updated list
+      location.reload()
+    );
   });
 
-  $(".create-burger").on("submit", function(event) {
+  //submit button to post new burger
+  $(".create-burger").on("submit", function (event) {        
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#burger_name").val().trim(),
-      devoured: 0
+        burger_name: $("#burger").val().trim(),
+        devoured: 0
     };
 
+    // Send the POST request.
     $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
+        type: "POST",
+        data: newBurger
     }).then(
-      function() {
-        console.log("created new burger");
-        location.reload();
-      }
+        function () {
+          // Reload the page to get the updated list
+          location.reload();
+        }
     );
   });
 });

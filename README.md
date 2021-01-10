@@ -85,8 +85,6 @@ I created a burger logger with MySQL, Node, Express, Handlebars and a homemade O
 
 ## Project status:
 
-* My current app does not update the data when the buttons are clicked.
-
 * My Heroku live link display a database error
 
 - - -
