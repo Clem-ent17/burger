@@ -19,6 +19,8 @@ https://fierce-waters-61441.herokuapp.com/
 
 I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. 
 
+![Database Schema](public/assets/css/img/eat-that-burger.jpg)
+
 
 ### Description
 
